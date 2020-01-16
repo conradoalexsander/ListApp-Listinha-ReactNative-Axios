@@ -1,4 +1,4 @@
-#Listinha - A toBuy list using React Native and Axios mobile application
+# Listinha -React Native and Axios list mobile application
 
 Listinha is a to buy list mobile application based in React Native. It uses Axios to handle the HTTP request to a generic backend.
 
@@ -17,7 +17,7 @@ Some screens of the Listinha app:
 
 
 <br>
-<br>
+
 
 
 <img
