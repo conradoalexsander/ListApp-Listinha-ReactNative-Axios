@@ -10,9 +10,6 @@ OBS 1.: Remember to apply the connection url of your backend server in src/confi
 
 OBS 2.: If you are running into connections problems in your local server, there is a high chance that this is a network port problem, in this case, you could try to expose the port of your local server using <a href="https://ngrok.com/">ngrok </a>, if you are runing an ISS Express server in Visual Studio, <a href="https://marketplace.visualstudio.com/items?itemName=DavidProthero.NgrokExtensions">this </a> extension can do the trick!
 
-OBS 3.: App currently is bugged, if you delete an item it won't appear in the screen until you reload the page!
-
-
 Some screens of the Listinha app:
 
 
@@ -61,5 +58,5 @@ OBS 1 .: Lembre-se de aplicar o URL de conexão do servidor back-end em src / co
 
 OBS 2 .: Se você estiver enfrentando problemas de conexão no servidor local, há uma grande chance de que seja um problema de porta de rede; nesse caso, você pode tentar expor a porta do servidor local usando <a href = " https://ngrok.com/">ngrok </a>, se você estiver executando um servidor ISS Express no Visual Studio, <a href = "https://marketplace.visualstudio.com/items?itemName=DavidProthero.NgrokExtensions "> esta extensão </a> pode fazer o truque!
 
-OBS 3 .: O aplicativo está com problemas no momento, se você excluir um item, ele não aparecerá na tela até que você recarregue a página!
+
 
