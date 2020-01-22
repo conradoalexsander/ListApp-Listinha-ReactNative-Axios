@@ -1,12 +1,5 @@
 import React from "react";
-import {
-    View,
-    Button,
-    Text,
-    Alert,
-    Image,
-    TouchableHighlight
-} from "react-native";
+import { View, Text, Image, TouchableHighlight } from "react-native";
 import style from "../../app_style";
 
 //=============================================================================================================

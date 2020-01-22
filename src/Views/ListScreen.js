@@ -1,14 +1,8 @@
 import React from "react";
-import {
-    View,
-    Button,
-    Text,
-    FlatList,
-    TouchableHighlight,
-    Image
-} from "react-native";
+import { View, Text, FlatList, TouchableHighlight, Image } from "react-native";
 import itensApi from "../api/itensApi";
-import deletarItem from "../services/deletarService";
+
+import { deletarItem } from "../services/itensService";
 import style from "../../app_style";
 
 //=============================================================================================================
@@ -34,19 +28,12 @@ export default class ListScreen extends React.Component {
 
     componentDidMount() {
         if (this.state.produtos.length === 0) {
-            itensApi
-                .get("api/Produtos")
-                .then(res => {
-                    if (res.status === 200) {
-                        this.setState({ produtos: res.data });
-                        console.log(res.data);
-                    } else {
-                        console.log(res.status);
-                        console.log(res.data);
-                    }
-                })
-                .catch(erro => console.log(erro));
+            this.getProdutos();
         }
+    }
+
+    componentDidUpdate() {
+        this.getProdutos();
     }
 
     render() {
@@ -102,38 +89,6 @@ export default class ListScreen extends React.Component {
                                         title="Apagar"
                                         onPress={() => {
                                             deletarItem(index);
-
-                                            if (
-                                                this.state.produtos.length === 0
-                                            ) {
-                                                itensApi
-                                                    .get("api/Produtos")
-                                                    .then(res => {
-                                                        if (
-                                                            res.status === 200
-                                                        ) {
-                                                            this.setState({
-                                                                produtos:
-                                                                    res.data
-                                                            });
-                                                            console.log(
-                                                                res.data
-                                                            );
-                                                        } else {
-                                                            console.log(
-                                                                res.status
-                                                            );
-                                                            console.log(
-                                                                res.data
-                                                            );
-                                                        }
-                                                    })
-                                                    .catch(erro =>
-                                                        console.log(erro)
-                                                    );
-                                            }
-
-                                            console.log(this.state);
                                         }}>
                                         <Text style={style.apagar}>&#215;</Text>
                                     </TouchableHighlight>
@@ -145,4 +100,19 @@ export default class ListScreen extends React.Component {
             </View>
         );
     }
+
+    getProdutos = () => {
+        itensApi
+            .get("api/Produtos")
+            .then(res => {
+                if (res.status === 200) {
+                    this.setState({ produtos: res.data });
+                    console.log(res.data);
+                } else {
+                    console.log(res.status);
+                    console.log(res.data);
+                }
+            })
+            .catch(erro => console.log(erro));
+    };
 }
